@@ -11,8 +11,10 @@ export default async function getCaretakers(filters={}){
       );
 
     const queryParams = new URLSearchParams(validFilters).toString();
-    // const request = await api.get(`/users/?role=caretaker&${queryParams}`);
-    const request = await api.get(`/caretaker/filter?${queryParams}`);
+  
+    // const request = await api.get(`/?${queryParams}`);
+    const request = await api.get(`/api/caretaker/filter?${queryParams}`);
+
     console.log('Respuesta del servidor:', request.data);
 
     return request.data;
